@@ -9,7 +9,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      filterForGreased: false
+      filterForGreased: false,
+      sortByName: false,
+      sortByWeight: false
     }
   }
 
@@ -20,14 +22,38 @@ class App extends Component {
   }
 
   alphabetisePigs = () => {
-
+    this.setState({
+      sortByName: !this.state.sortByName
+    })
   }
+
+  weightSorted = () => {
+    console.log('hello')
+    this.setState({
+      sortByWeight: !this.state.sortByWeight
+    })
+  }
+  
 
   render() {
     return (
       <div className="App">
-        <Nav toggleGreased={this.toggleGreased} />
-        <PigBrowser filterForGreased={this.state.filterForGreased} />
+        <Nav
+          toggleGreased={this.toggleGreased}
+          alphabetisePigs={this.alphabetisePigs}
+          weightSorted={this.weightSorted}
+
+          filterForGreased={this.state.filterForGreased}
+          sortByName={this.state.sortByName}
+          sortByWeight={this.state.sortByWeight}
+
+        />
+        <PigBrowser
+          filterForGreased={this.state.filterForGreased}
+          sortByName={this.state.sortByName}
+          sortByWeight={this.state.sortByWeight}
+
+        />
       </div>
     );
   }

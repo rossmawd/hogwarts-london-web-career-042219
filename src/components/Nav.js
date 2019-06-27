@@ -1,8 +1,9 @@
 import piggy from '../porco.png'
-import React from 'react'
+import React, { Component } from "react";
 
-const Nav = () => {
-	return (
+export default class Nav extends Component  {
+  render() {
+    return (
 		<div className="navWrapper">
 			<span className="headerText">Hogwarts</span>
 			<div className="TwirlyPig">
@@ -11,8 +12,15 @@ const Nav = () => {
 				</a>
 			</div>
 			<span className="normalText">A React App for County Fair Hog Fans</span>
+      <div>
+        <br></br>
+        <button onClick={this.props.toggleGreased} className="ui button">Filter Greased Pigs</button>
+        <button onClick={this.props.toggleGreased} className="ui button">Alphabetise Pigs</button>
+        <button className="ui button">Sort by weight</button>
+
+      </div>
 		</div>
-	)
+	)}
 }
 
-export default Nav
+

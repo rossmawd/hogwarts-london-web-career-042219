@@ -9,16 +9,16 @@ export default class PigBrowser extends Component {
 
   sortArr = () => {
     let alphaHogs = [...hogs].sort((a, b) => {
-      return (a.name > b.name ? 1 : -1)
+      return (a.name.localeCompare(b.name))
+      // above is another approach to alphabetising strings as using the below method
+      // return (a.name > b.name ? 1 : -1)
     })
     return alphaHogs
   }
 
-  weightArr = () => {
-    // let weight = 'weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water'
-    
+  weightArr = () => {    
     let weightHogs = [...hogs].sort((a, b) => {
-      return (a['weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water'] > b['weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water'] ? 1 : -1)
+      return (a['weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water'] - b['weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water'])
     })
     return weightHogs
   }
@@ -26,9 +26,7 @@ export default class PigBrowser extends Component {
 
   render() {
     return (
-
       <div className="ui grid container" >
-        
         {this.props.filterForGreased ?
           this.filterArr().map(hog => <PigCard hog={hog} />)
           : this.props.sortByName ?

@@ -15,8 +15,8 @@ export default class Nav extends Component  {
       <div>
         <br></br>
         <button onClick={this.props.toggleGreased} className="ui button">{ this.props.filterForGreased ? "Show all pigs" : "Show Greased Pigs"}</button>
-        <button onClick={this.props.alphabetisePigs} className="ui button">{ this.props.sortByName ? "Show all pigs" : "Alphabetise Pigs"}</button>
-        <button onClick={this.props.weightSorted} className="ui button">{ this.props.sortByWeight ? "Show all pigs" : "Sort by weight"}</button>
+        <button onClick={this.props.alphabetisePigs} className="ui button">{ this.props.sortByName ? "Go Back" : "Alphabetise Pigs"}</button>
+        <button onClick={this.props.weightSorted} className="ui button">{ this.props.sortByWeight ? "Go Back" : "Sort by weight"}</button>
 
       </div>
 		</div>

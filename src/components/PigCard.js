@@ -31,24 +31,22 @@ export default class PigCard extends Component {
   render() {
     return (
       <div onClick={this.renderPigDetails} className="ui eight wide column">
-        <div clasName="ui card">
+        <div className="pigTile">
           <img
             src={this.hogNameImg(this.props.hog.name)}
           />
           <h3>{this.props.hog.name}</h3>
-          
         {
           this.state.clicked ?
           <div>
-            <p>{this.props.hog.specialty}</p>
+            <p>Specialty: {this.props.hog.specialty}</p>
             <p>Greased: {this.props.hog.greased ? "Yes" : "No"}</p>
             <p>
               Weight: {
                 this.props.hog[
                 "weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water"
                 ]
-              }
-            </p>
+              } LG</p>
             <p>Highest Medal: {this.props.hog["highest medal achieved"]}</p>
           </div> : null
         }
@@ -57,6 +55,3 @@ export default class PigCard extends Component {
     );
   }
 }
-
-// str.toLowerCase();
-//The + operator

@@ -5,7 +5,6 @@ import Nav from "./Nav";
 import PigBrowser from "./PigBrowser";
 
 class App extends Component {
-  //componentDidMount(){}
   constructor(props) {
     super(props)
     this.state = {
